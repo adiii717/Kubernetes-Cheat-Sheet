@@ -14,5 +14,5 @@ Set-Alias -Name k -Value kubectl
 ## Delete All Evicted pods
 
 ```shell
-k delete pods $( k get pods -A | grep "Evicted" | awk '{print $2}') -n $( k get pods -A | grep "Evicted" | awk '{print $1}')
-```
+ evicated_pods=$(k get pods -A | grep "Evicted") && 
+ echo $evicated_pods && while IFS= read -r pod ; do ns=$(echo $pod | awk '{print $1}'); po=$(echo $pod | awk '{print $2}'); k delete po $po -n $ns ;done <<<  $evicated_pods```
