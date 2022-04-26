@@ -1,7 +1,7 @@
 # Kubernetes-Cheat-Sheet
 
 ### Kubectl Alias
-Linux & Mac (~/.zshrc) or (~/.bashrc)
+Linux & Mac `(~/.zshrc)` or `(~/.bashrc)`
 
 ```shell
 alias k=kubectl
