@@ -11,6 +11,11 @@ Windows
 Set-Alias -Name k -Value kubectl
 ```
 
+## Delete Evicted pods in current namespace
+```shell
+ k delete po <<< echo $(k get pods | grep Evicted | awk '{print $1}' | tr '\n' " ")
+```
+
 ## Delete All Evicted pods
 
 ```shell
